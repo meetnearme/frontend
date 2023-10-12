@@ -2,8 +2,7 @@
 
 import { Portal, Select } from '@ark-ui/react'
 
-import { cva, css } from "../../styled-system/css"
-import { styled } from "../../styled-system/jsx"
+import { css } from "../../styled-system/css"
 
 
 export const Basic = () => {
