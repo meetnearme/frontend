@@ -1,11 +1,23 @@
-import {Basic} from "./select"
+import { CardWrapper } from "../components/card-wrapper"
 import { Card } from "../components/card"
+
+import { events } from "../data/mockEvents"
 
 export default function Home() {
 	return (
 		<div>
-			<Basic />
-			<Card heading="Event 1" eventDate={new Date()} />
+			{/* form */}
+			<CardWrapper>
+				{events.map((el) => (
+					<Card
+						key={el.heading}
+						heading={el.heading}
+						eventDate={el.eventDate}
+						desc={el.desc}
+						categories={el.categories}
+					/>
+				))}
+			</CardWrapper>
 		</div>
 	)
 }

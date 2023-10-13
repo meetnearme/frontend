@@ -1,3 +1,4 @@
+import { Pill } from "../components/pill"
 import { cva } from "../../styled-system/css"
 import { styled } from "../../styled-system/jsx"
 
@@ -5,16 +6,18 @@ type propType = {
   heading: string,
   eventDate: Date,
   desc?: string,
+  categories?: string[]
 }
 
-export const cardStyle = cva({
+const cardStyle = cva({
   base: {
     padding: "0.75em",
     borderRadius: 'sm',
     border: "2px solid gray",
-    width: "50%",
+    width: "100%",
     display: "flex",
-    flexFlow: "column"
+    flexFlow: "column",
+    gap: "1rem"
   },
 })
 
@@ -22,7 +25,9 @@ const CardBox = styled('div', cardStyle)
 
 export const Card = (props: propType) => (
   <CardBox>
-    <h1>{props.heading}</h1>
-    <p>{props.eventDate.toLocaleString()}</p>
+    <h2>{props.heading}</h2>
+    <p>{props.eventDate.toLocaleString(undefined, { year: 'numeric', month: 'long', day: 'numeric' } )}</p>
+    {<p>Description: {props.desc ? props.desc : ""}</p>} 
+    {props.categories && <p>{props.categories.map(category => <Pill key={category}>{category}</Pill>)}</p>} 
   </CardBox>
 )
