@@ -23,5 +23,13 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "typescript": "latest"
+  },
+  "resolutions": {
+    "@zag-js/store": "^0.12.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "@zag-js/store": "^0.12.0"
+    }
   }
 }
