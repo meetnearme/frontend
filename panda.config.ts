@@ -1,4 +1,5 @@
 import { defineConfig } from '@pandacss/dev'
+import {badgeRecipe} from "./badgeRecipe"
 
 export default defineConfig({
   preflight: true,
@@ -6,7 +7,11 @@ export default defineConfig({
   include: ['./src/**/*.{js,jsx,ts,tsx}', './pages/**/*.{js,jsx,ts,tsx}'],
   exclude: [],
   theme: {
-    extend: {},
+    extend: {
+      recipes: {
+        badge: badgeRecipe
+      }
+    },
   },
   jsxFramework: 'react',
   outdir: 'styled-system',
