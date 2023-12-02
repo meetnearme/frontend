@@ -24,20 +24,3 @@ export default defineConfig({
     jsxFramework: 'react',
     outdir: 'styled-system',
 })
-
-// import {defineConfig} from '@pandacss/dev'
-
-// export default defineConfig({
-//     preflight: true,
-//     presets: [
-//         '@pandacss/preset-base',
-//         createPreset({
-//             accentColor: 'grass',
-//             grayColor: 'mauve',
-//             borderRadius: 'md',
-//         }),
-//     ],
-//     include: ['./src/**/*.{js,jsx,ts,tsx}'],
-//     jsxFramework: 'react',
-//     outdir: 'styled-system',
-// })
